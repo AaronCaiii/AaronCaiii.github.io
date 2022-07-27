@@ -146,8 +146,11 @@ Nmap done: 1 IP address (1 host up) scanned in 110.11 seconds
 ```
 
 可以看到开放了22, 113, 139, 445, 8080端口
+<br>
 先来尝试一下smb, 用searchsploit看一下有没有可用的漏洞
+<br>
 nmap下来的版本是3.x-4.x
+<br>
 
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.74]
