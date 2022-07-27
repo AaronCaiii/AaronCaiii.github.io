@@ -268,17 +268,19 @@ Trying loly / fernando Time: 00:00:14 <=                                        
  | Username: loly, Password: fernando
 ```
 跑出来了密码
+<br>
 ![Img](../FILES/loly/img-20220726152243.png)
 登录上来有一个邮箱, 先记下来
+<br>
 *Current administration email: loly@mail.com*
 ### 文件上传
 ![Img](../FILES/loly/img-20220726155031.png)
 发现adrotate
 ![Img](../FILES/loly/img-20220726155119.png)
-查看描述说: Zip文件会被自动解压到目录, 并且原来的zip文件会被删除
-上传一个shell.php.zip
+<br>查看描述说: Zip文件会被自动解压到目录, 并且原来的zip文件会被删除
+<br>上传一个shell.php.zip
 ![Img](../FILES/loly/img-20220726155156.png)
-访问后获得www-data权限
+<br>访问后获得www-data权限
 ```
 └─$ nc -lvnp 4444             
 listening on [any] 4444 ...
