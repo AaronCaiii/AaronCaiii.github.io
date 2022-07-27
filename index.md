@@ -9,6 +9,7 @@ I'm currently work on [Orange Cyberdefense](https://www.orangecyberdefense.com)
 Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog also upload source files to [my other project](https://github.com/AaronCaiii/Notes).
 
 ## Currently Notes
+![Total](https://img.shields.io/badge/TagetNotes-10-red)
 ### 中文版本
 - [Cute](https://aaroncaiii.github.io/Target%20Notes/Cute)
   - [Download Cute](https://www.vulnhub.com/entry/bbs-cute-102,567/)
