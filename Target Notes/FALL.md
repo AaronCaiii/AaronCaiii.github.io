@@ -353,7 +353,8 @@ User qiu may run the following commands on FALL:
 [qiu@FALL ~]$ 
 
 ```
->...这个权限提升有点莫名的简单, 在.bash_profile里面就有自带的密码
+<br>...这个权限提升有点莫名的简单, 在.bash_profile里面就有自带的密码
+<br>
 并且sudo可以使用所有权限
 ```
 [qiu@FALL ~]$ sudo su
