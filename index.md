@@ -23,5 +23,7 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 <p><a href="https://aaroncaiii.github.io/Target%20Notes/solstice">solstice</a></p>
 </details>
 
+<details>
 <summary style="display: block;margin-block-start: 1em;margin-block-end: 1em;margin-inline-start: 0px;margin-inline-end: 0px;font-weight: normal;color: #b5e853;text-shadow: 0 1px 1px rgb(0 0 0 / 10%), 0 0 5px rgb(181 232 83 / 10%), 0 0 10px rgb(181 232 83 / 10%);letter-spacing: -0.03em;"> > English Version</summary>
 <p><a href="https://aaroncaiii.github.io/Target%20Notes-en/Cute.md">Cute</a></p>
+</details>
