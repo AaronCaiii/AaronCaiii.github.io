@@ -10,6 +10,6 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 
 ## Currently Notes
 ### 中文版本
-- [Cute](Target%20Notes/Cute)
+- [Cute](https://aaroncaiii.github.io/Target%20Notes/Cute)
 
 ### English Version
