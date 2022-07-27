@@ -6,6 +6,7 @@ You can found me at [My Github Website](https://github.com/AaronCaiii)
 I'm currently work on [Orange Cyberdefense](https://www.orangecyberdefense.com)
 
 ## What do I do at this blog?
+![Offensive](https://www.offensive-security.com/wp-content/uploads/2019/10/offsec-home-page.png)
 Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog also upload source files to [my other project](https://github.com/AaronCaiii/Notes).
 
 ## Currently Notes
