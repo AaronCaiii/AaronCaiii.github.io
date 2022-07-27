@@ -35,9 +35,3 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 
 ### English Version
 - [Cute](https://aaroncaiii.github.io/Target%20Notes-en/Cute)
-
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<span id="busuanzi_container_site_pv">
-    Total Traffic<span id="busuanzi_value_site_pv"></span>Times
-</span>
