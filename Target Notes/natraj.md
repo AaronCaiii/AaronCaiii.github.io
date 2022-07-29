@@ -301,7 +301,11 @@ cat: write error: Broken pipe
 
 
 ```
-> 在/home目录发现两个用户的文件夹, 但是都没权限查看里面的内容
+
+<br>
+在/home目录发现两个用户的文件夹, 但是都没权限查看里面的内容
+<br>
+
 ```
 www-data@ubuntu:/home$ cd mahakal
 cd mahakal
@@ -340,7 +344,11 @@ drwx------ 3 natraj natraj 4096 Jun  3  2020 .gnupg
 -rw-r--r-- 1 natraj natraj    0 Jun  3  2020 .sudo_as_admin_successful
 
 ```
-> 在linpeas.sh里面提醒了我们apache2.conf有可能是个突破口
+
+<br>
+在linpeas.sh里面提醒了我们apache2.conf有可能是个突破口
+<br>
+
 ```
 # These need to be set in /etc/apache2/envvars
 User ${APACHE_RUN_USER}
