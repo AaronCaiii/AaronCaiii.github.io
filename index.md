@@ -37,6 +37,8 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 #### 28.July-2rd.Augest
 - [Decoy](https://aaroncaiii.github.io/Target%20Notes/decoy)
   - [Download Decoy](https://download.vulnhub.com/sunset/decoy.ova)
+- [potato](https://aaroncaiii.github.io/Target%20Notes/potato)
+  - [Download potato](https://download.vulnhub.com/potato/Potato.ova)
 
 ### English Version
 - [Cute](https://aaroncaiii.github.io/Target%20Notes-en/Cute)
