@@ -187,6 +187,7 @@ Target: http://192.168.146.62/
 发现了admin目录, 查看页面源代码
 <br>
 ![Img](../FILES/potato/img-20220729154016.png)
+<br>
 发现布局是跟我们一开始获取到的.bak一样的
 <br>
 分析一下源码
@@ -237,7 +238,9 @@ https://owasp.org/www-pdf-archive/PHPMagicTricks-TypeJuggling.pdf
 ![Img](../FILES/potato/img-20220729161351.png)
 <br>
 ![Img](../FILES/potato/img-20220729161404.png)
+<br>
 ![Img](../FILES/potato/img-20220729161413.png)
+<br>
 ![Img](../FILES/potato/img-20220729161419.png)
 <br>
 ![Img](../FILES/potato/img-20220729161432.png)
