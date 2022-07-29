@@ -12,6 +12,7 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 ## Currently Notes
 ![Total](https://img.shields.io/badge/TagetNotes-10-red)
 ### 中文版本
+#### 21.July-26.July
 - [Cute](https://aaroncaiii.github.io/Target%20Notes/Cute)
   - [Download Cute](https://www.vulnhub.com/entry/bbs-cute-102,567/)
 - [Development](https://aaroncaiii.github.io/Target%20Notes/Development)
@@ -32,6 +33,9 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
    - [Download sar](https://download.vulnhub.com/sar/sar.zip)
 - [solstice](https://aaroncaiii.github.io/Target%20Notes/solstice)
   - [Download solstice](https://download.vulnhub.com/sunset/solstice.ova)
+#### 28.July-2rd.Augest
+- [Decoy](https://aaroncaiii.github.io/Target%20Notes/decoy)
+  - [Download Decoy](https://download.vulnhub.com/sunset/decoy.ova)
 
 ### English Version
 - [Cute](https://aaroncaiii.github.io/Target%20Notes-en/Cute)
