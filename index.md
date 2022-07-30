@@ -1,10 +1,54 @@
 ## Aaron Cai
+
 ## Useful Tools
+<style>
+ *{
+  padding:0;
+  margin:0;
+  text-decoration:none;
+ }
+ .button_a{
+     text-decoration:none;
+     color:#fff;
+ }
+ .tools_button{
+     background-color:#151515;
+     border-radius:14px;
+     float:left;
+ }
+</style>
 <div>
-<button>
-<a href="https://aaroncaiii.github.io/CyberChef/CyberChef.html">CyberChef</a>
+<button class="tools_button">
+<a class="button_a" href="https://aaroncaiii.github.io/CyberChef/CyberChef.html">CyberChef</a>
 </button>
+<button class="tools_button">
+<a class="button_a" href="https://sentrywhale.com/documentation/reverse-shell">Generate Reverse Shell</a>
+</button>
+<button class="tools_button">
+<a class="button_a" href="https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS">linpeas</a>
+</button>
+<button class="tools_button">
+<a class="button_a" href="https://github.com/DominicBreuker/pspy">pspy</a>
+</button>
+
 </div>
+<br>
+
+## Useful Exploit
+<div>
+<button class="tools_button">
+<a class="button_a" href="https://github.com/briskets/CVE-2021-3493">Ubuntu Local Privesc</a>
+</button>
+<button class="tools_button">
+<a class="button_a" href="https://github.com/berdav/CVE-2021-4034">Pwnkit</a>
+</button>
+<button class="tools_button">
+<a class="button_a" href="https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit">DirtyPipe</a>
+</button>
+
+</div>
+
+<br>
 
 ## Something In Here
 You can found me at [My Github Website](https://github.com/AaronCaiii)
