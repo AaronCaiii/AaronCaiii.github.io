@@ -1,6 +1,6 @@
-## Aaron Cai
+## <center>Aaron Cai</center>
 
-### 导航栏-導航欄-Navigation Bar
+### <center>导航栏-Navigation Bar</center>
 <span><a href="#Notes">Note</a></span>
 
 ---
