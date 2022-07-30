@@ -16,7 +16,7 @@ a:hover{
 ## <center>0x4161726f6e</center>
 
 ### <center>导航栏-Navigation Bar</center>
-<span><a href="#Notes">Note</a></span>
+<span><a href="#Notes" style="color:#fff;font-size:1.5em">Note</a></span>
 
 ---
 ## Useful Tools
