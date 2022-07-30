@@ -16,16 +16,16 @@ a:hover{
 
 ---
 ## Useful Tools
-[CyberChef](https://aaroncaiii.github.io/CyberChef/CyberChef.html)
-[Generate Reverse Shell](https://sentrywhale.com/documentation/reverse-shell)
-[linpeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
-[pspy](https://github.com/DominicBreuker/pspy)
-[Linux exploit suggester](https://github.com/mzet-/linux-exploit-suggester)
+- [CyberChef](https://aaroncaiii.github.io/CyberChef/CyberChef.html)
+- [Generate Reverse Shell](https://sentrywhale.com/documentation/reverse-shell)
+- [linpeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
+- [pspy](https://github.com/DominicBreuker/pspy)
+- [Linux exploit suggester](https://github.com/mzet-/linux-exploit-suggester)
 
 ## Useful Exploit
-[Ubuntu Local Privesc](https://github.com/briskets/CVE-2021-3493)
-[Pwnkit](https://github.com/berdav/CVE-2021-4034)
-[DirtyPipe](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit)
+- [Ubuntu Local Privesc](https://github.com/briskets/CVE-2021-3493)
+- [Pwnkit](https://github.com/berdav/CVE-2021-4034)
+- [DirtyPipe](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit)
 
 
 
