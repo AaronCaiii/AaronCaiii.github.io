@@ -1,5 +1,5 @@
+<head>
 <title>0x4161726f6e | Welcome</title>
-
 <style>
 *{
     text-decoration:none;
@@ -11,6 +11,8 @@ a:hover{
     box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
 }
 </style>
+</head>
+
 
 ## <center>0x4161726f6e</center>
 
