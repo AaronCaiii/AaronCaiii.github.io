@@ -14,7 +14,6 @@ a:hover{
 
 
 ## <center>0x4161726f6e</center>
-
 ### <center>导航栏-Navigation Bar</center>
 <span><a href="#Notes" style="color:#fff;font-size:1.5em">Note</a></span>
 
@@ -49,39 +48,46 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 
 ## <span id="Notes">Currently Notes</span>
 ![Total](https://img.shields.io/badge/TargetNotes-12-blueviolet)
-### 中文版本
 #### 21.July-26.July
-- [Cute](https://aaroncaiii.github.io/Target%20Notes/Cute)
+- Cute
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Cute)
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/Cute)
   - [Download Cute](https://www.vulnhub.com/entry/bbs-cute-102,567/)
-- [Development](https://aaroncaiii.github.io/Target%20Notes/Development)
+- Development
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Development)
+  - [EN]((https://aaroncaiii.github.io/Target%20Notes-en/Development))
   - [Download Development](https://www.vulnhub.com/entry/digitalworldlocal-development,280/)
-- [FALL](https://aaroncaiii.github.io/Target%20Notes/FALL)
+- FALL
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/FALL)
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/FALL)
   - [Download FALL](https://www.vulnhub.com/entry/digitalworldlocal-fall,726/)
-- [Joy](https://aaroncaiii.github.io/Target%20Notes/Joy)
+- Joy
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Joy)
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/Joy)
   - [Download Joy](https://www.vulnhub.com/entry/digitalworldlocal-joy,298/)
 - [SkyTower](https://aaroncaiii.github.io/Target%20Notes/SkyTower)
   - [Download SkyTower](https://www.vulnhub.com/entry/skytower-1,96/)
-- [lampiao](https://aaroncaiii.github.io/Target%20Notes/lampiao)
+- lampiao
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/lampiao)
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/lampiao)
   - [Download lampiao](https://download.vulnhub.com/lampiao/Lampiao.zip)
-- [loly](https://aaroncaiii.github.io/Target%20Notes/loly)
+- loly
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/loly)
   - [Download Loly]( https://download.vulnhub.com/loly/Loly.ova)
-- [natraj](https://aaroncaiii.github.io/Target%20Notes/natraj)
+- natraj
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/natraj)
   - [Download natraj](https://download.vulnhub.com/ha/Natraj.zip)
-- [sar](https://aaroncaiii.github.io/Target%20Notes/sar)
+- sar
+   - [中文](https://aaroncaiii.github.io/Target%20Notes/sar)
    - [Download sar](https://download.vulnhub.com/sar/sar.zip)
-- [solstice](https://aaroncaiii.github.io/Target%20Notes/solstice)
+- solstice
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/solstice)
   - [Download solstice](https://download.vulnhub.com/sunset/solstice.ova)
 
 #### 28.July-2rd.Augest
-- [Decoy](https://aaroncaiii.github.io/Target%20Notes/decoy)
+- Decoy
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/decoy)
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/decoy)
   - [Download Decoy](https://download.vulnhub.com/sunset/decoy.ova)
 - [potato](https://aaroncaiii.github.io/Target%20Notes/potato)
   - [Download potato](https://download.vulnhub.com/potato/Potato.ova)
-
-### English Version
-- [Cute](https://aaroncaiii.github.io/Target%20Notes-en/Cute)
-- [Development](https://aaroncaiii.github.io/Target%20Notes-en/Development)
-- [Decoy](https://aaroncaiii.github.io/Target%20Notes-en/decoy)
-- [FALL](https://aaroncaiii.github.io/Target%20Notes-en/FALL)
-- [Joy](https://aaroncaiii.github.io/Target%20Notes-en/Joy)
-- [lampiao](https://aaroncaiii.github.io/Target%20Notes-en/lampiao)
