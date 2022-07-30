@@ -24,7 +24,7 @@ a:hover{
 - [linpeas](https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS)
 - [pspy](https://github.com/DominicBreuker/pspy)
 - [Linux exploit suggester](https://github.com/mzet-/linux-exploit-suggester)
-
+- [Reverse Shell Generator](https://www.revshells.com/)
 ## Useful Exploit
 - [Ubuntu Local Privesc](https://github.com/briskets/CVE-2021-3493)
 - [Pwnkit](https://github.com/berdav/CVE-2021-4034)
