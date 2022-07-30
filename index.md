@@ -25,12 +25,14 @@ a:hover{
 - [pspy](https://github.com/DominicBreuker/pspy)
 - [Linux exploit suggester](https://github.com/mzet-/linux-exploit-suggester)
 - [Reverse Shell Generator](https://www.revshells.com/)
+
 ## Useful Exploit
 - [Ubuntu Local Privesc](https://github.com/briskets/CVE-2021-3493)
 - [Pwnkit](https://github.com/berdav/CVE-2021-4034)
 - [DirtyPipe](https://github.com/Arinerron/CVE-2022-0847-DirtyPipe-Exploit)
-
-
+- [PHP-ReverseShell-Code](https://github.com/pentestmonkey/php-reverse-shell)
+- [Mimikatz](https://github.com/ParrotSec/mimikatz)
+- [Dirtycow](https://github.com/firefart/dirtycow)
 
 ## Something In Here
 You can found me at [My Github Website](https://github.com/AaronCaiii).
