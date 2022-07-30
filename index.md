@@ -67,7 +67,8 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
   - [中文](https://aaroncaiii.github.io/Target%20Notes/Joy)
   - [EN](https://aaroncaiii.github.io/Target%20Notes-en/Joy)
   - [Download Joy](https://www.vulnhub.com/entry/digitalworldlocal-joy,298/)
-- [SkyTower](https://aaroncaiii.github.io/Target%20Notes/SkyTower)
+- SkyTower
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/SkyTower)
   - [Download SkyTower](https://www.vulnhub.com/entry/skytower-1,96/)
 - lampiao
   - [中文](https://aaroncaiii.github.io/Target%20Notes/lampiao)
@@ -91,5 +92,6 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
   - [中文](https://aaroncaiii.github.io/Target%20Notes/decoy)
   - [EN](https://aaroncaiii.github.io/Target%20Notes-en/decoy)
   - [Download Decoy](https://download.vulnhub.com/sunset/decoy.ova)
-- [potato](https://aaroncaiii.github.io/Target%20Notes/potato)
+- potato
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/potato)
   - [Download potato](https://download.vulnhub.com/potato/Potato.ova)
