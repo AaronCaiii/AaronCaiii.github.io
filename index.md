@@ -4,7 +4,6 @@
     text-decoration:none;
 }
 a:hover{
-    background-color:#151515;
     -webkit-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
     -moz-box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
     box-shadow: 10px 10px 99px 6px rgba(76,201,240,1);
