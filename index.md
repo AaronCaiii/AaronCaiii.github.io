@@ -24,6 +24,7 @@ a:hover{
 - [pspy](https://github.com/DominicBreuker/pspy)
 - [Linux exploit suggester](https://github.com/mzet-/linux-exploit-suggester)
 - [Reverse Shell Generator](https://www.revshells.com/)
+- [rbash bypass](https://www.exploit-db.com/docs/english/44592-linux-restricted-shell-bypass-guide.pdf)
 
 ## Useful Exploit
 - [Ubuntu Local Privesc](https://github.com/briskets/CVE-2021-3493)
@@ -56,7 +57,7 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
   - [Download Cute](https://www.vulnhub.com/entry/bbs-cute-102,567/)
 - Development
   - [中文](https://aaroncaiii.github.io/Target%20Notes/Development)
-  - [EN]((https://aaroncaiii.github.io/Target%20Notes-en/Development))
+  - [EN](https://aaroncaiii.github.io/Target%20Notes-en/Development)
   - [Download Development](https://www.vulnhub.com/entry/digitalworldlocal-development,280/)
 - FALL
   - [中文](https://aaroncaiii.github.io/Target%20Notes/FALL)
