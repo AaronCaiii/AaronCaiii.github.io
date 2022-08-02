@@ -228,7 +228,7 @@ Interesting Finding(s):
 
 ```
 通过访问/wp-login.php看到能访问后台登录界面
-![Img](./FILES/oscp/img-20220802104846.png)
+![Img](../FILES/oscp/img-20220802104846.png)
 <br>
 枚举wordpress用户名
 ```
@@ -247,20 +247,20 @@ Interesting Finding(s):
 ### 暴力破解
 尝试爆破admin密码
 <br>
-![Img](./FILES/oscp/img-20220802110852.png)
+![Img](../FILES/oscp/img-20220802110852.png)
 没爆破出来.. 还把数据库打趴下了
 <br>
 从nikto可以发现根目录下还有一个secret.txt文件, 访问一下看看
 <br>
-![Img](./FILES/oscp/img-20220802111031.png)
+![Img](../FILES/oscp/img-20220802111031.png)
 访问之后发现是一个base64加密
-![Img](./FILES/oscp/img-20220802111043.png)
+![Img](../FILES/oscp/img-20220802111043.png)
 解码之后发现是一个sshkey!
 <br>
 ### 突破边界
-![Img](./FILES/oscp/img-20220802111146.png)
+![Img](../FILES/oscp/img-20220802111146.png)
 在页面可以发现一个oscp的用户, 使用sshkey进行登录
-![Img](./FILES/oscp/img-20220802111234.png)
+![Img](../FILES/oscp/img-20220802111234.png)
 修改权限
 ```
 └─$ chmod 700 key                               
@@ -336,9 +336,9 @@ Last login: Sat Jul 11 16:50:11 2020 from 192.168.128.1
 
 ```
 
-![Img](./FILES/oscp/img-20220802111814.png)
+![Img](../FILES/oscp/img-20220802111814.png)
 发现bash具有suid权限, 在GTFOBins查看如何利用
-![Img](./FILES/oscp/img-20220802111936.png)
+![Img](../FILES/oscp/img-20220802111936.png)
 ```
 -bash-5.0$ id
 uid=1000(oscp) gid=1000(oscp) groups=1000(oscp),4(adm),24(cdrom),27(sudo),30(dip),46(plugdev),116(lxd)
@@ -395,5 +395,5 @@ bash-5.0# cat flag.txt
 d73b04b0e696b0945283defa3eee4538
 
 ```
-![Img](./FILES/oscp/img-20220802120047.png)
+![Img](../FILES/oscp/img-20220802120047.png)
 ## 虽然说这是一个wordpress。。。但是边界突破一点也没用到它😅
