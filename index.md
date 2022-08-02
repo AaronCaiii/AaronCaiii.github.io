@@ -85,12 +85,7 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 - solstice
   - [中文](https://aaroncaiii.github.io/Target%20Notes/solstice)
   - [Download solstice](https://download.vulnhub.com/sunset/solstice.ova)
-- Tre
-  - [中文](https://aaroncaiii.github.io/Target%20Notes/Tre)
-  - [Download Tre](https://download.vulnhub.com/tre/Tre.zip)
-- oscp-voucher
-  - [中文](https://aaroncaiii.github.io/Target%20Notes/Tre/oscp)
-  - [Download oscp-voucher](https://download.vulnhub.com/infosecprep/oscp.zip)
+
 
 ### 28.July-2rd.Augest
 - Decoy
@@ -100,3 +95,9 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 - potato
   - [中文](https://aaroncaiii.github.io/Target%20Notes/potato)
   - [Download potato](https://download.vulnhub.com/potato/Potato.ova)
+- Tre
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Tre)
+  - [Download Tre](https://download.vulnhub.com/tre/Tre.zip)
+- oscp-voucher
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/oscp)
+  - [Download oscp-voucher](https://download.vulnhub.com/infosecprep/oscp.zip)
