@@ -102,3 +102,8 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 - oscp-voucher
   - [中文](https://aaroncaiii.github.io/Target%20Notes/oscp)
   - [Download oscp-voucher](https://download.vulnhub.com/infosecprep/oscp.zip)
+
+### 4.Augest-9.Augest
+- Seppuku
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Seppuku)
+  - [Download Sepuku](https://download.vulnhub.com/seppuku/Seppuku.zip)
