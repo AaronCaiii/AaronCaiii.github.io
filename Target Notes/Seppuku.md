@@ -345,6 +345,7 @@ r@bbit-hole@192.168.146.61: Permission denied (publickey,password).
 发现还存在一个index.php文件
 ![Img](../FILES/Seppuku/img-20220804143357.png)
 访问并尝试了给我们的用户名和密码, 但是还是密码错误
+<br>
 dirsearch的结果与7601端口结果差不多
 ```
 ┌──(aaron㉿aacai)-[~/Desktop/Seppuku]
@@ -398,12 +399,15 @@ dirb
 ==> DIRECTORY: http://192.168.146.61:7601/w/      
 ```
 发现还存在两个我们在dirsearch里面没有看到的目录
+<br>
 ![Img](../FILES/Seppuku/img-20220804145128.png)
 keys里面存放了两个private文件
 ![Img](../FILES/Seppuku/img-20220804145144.png)
+<br>
 发现竟然是ssh登录密钥
 <br>
 根据secret的hostname尝试使用ssh密钥登录
+<br>
 ![Img](../FILES/Seppuku/img-20220804145459.png)
 ```
 ┌──(aaron㉿aacai)-[~/Desktop/Seppuku]
@@ -434,6 +438,8 @@ r@bbit-hole@192.168.146.61's password:
 全都失败了...
 <br>
 那就只能用hydra尝试暴力破解了
+<br>
+
 ```
 ┌──(aaron㉿aacai)-[~/Desktop/Seppuku]
 └─$ hydra -l seppuku 192.168.146.61 ssh -P password.lst
