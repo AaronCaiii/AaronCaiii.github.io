@@ -240,8 +240,11 @@ Target: http://192.168.146.66:9198/
 ### 获取密码后提权
 通过ssh密码我们能够直接登录靶机
 ![Img](../FILES/Geisha/img-20220814153958.png)
+<br>
 查看一下是否有suid的文件以及是否有sudo权限
+<br>
 ![Img](../FILES/Geisha/img-20220814154114.png)
+<br>
 发现/usr/bin/base32拥有suid权限
 <br>
 查看如何利用base32去提权
@@ -252,11 +255,14 @@ Target: http://192.168.146.66:9198/
 获取到root的密码哈希, 尝试能否使用john爆破
 <br>
 同样的我们也可以尝试去获取root的sshkey
+<br>
 ![Img](../FILES/Geisha/img-20220814154442.png)
 拿到root的sshkey, 拿到时我们需要修改sshkey的权限, 否则无法登录
+<br>
 ![Img](../FILES/Geisha/img-20220814154639.png)
 ### 提权成功
 通过修改id_rsa的权限, 成功登录root
+<br>
 ![Img](../FILES/Geisha/img-20220814154715.png)
 ![Img](../FILES/Geisha/img-20220814154741.png)
 
