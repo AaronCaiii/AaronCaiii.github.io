@@ -224,4 +224,5 @@ find / -perm -u=s -type f 2>/dev/null
 这时候有root权限了
 <br>
 ![Img](../FILES/photographer/img-20220814172119.png)
+<br>
 提权成功
