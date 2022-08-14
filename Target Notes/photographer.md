@@ -146,25 +146,38 @@ nikto出来的结果并没有多少
 ![Img](../FILES/photographer/img-20220814164633.png)
 ### smb枚举
 ![Img](../FILES/photographer/img-20220814164733.png)
+<br>
 通过smbclient可以发现smbashare是一个share的文件夹
+<br>
 ![Img](../FILES/photographer/img-20220814164817.png)
+<br>
 当我尝试连接的时候, 发现它跟我说\的数量不够, 于是再加两个
+<br>
 ![Img](../FILES/photographer/img-20220814164834.png)
 发现已经通过其连接上
+<br>
 ![Img](../FILES/photographer/img-20220814164900.png)
+<br>
 下载mailsent.txt到本地
+<br>
 ![Img](../FILES/photographer/img-20220814164928.png)
 发现这是一个关于Daisa的邮件, 然后在login界面我们需要通过邮箱登录, 那就使用这个账号试试
+<br>
 ![Img](../FILES/photographer/img-20220814165024.png)
 登录上来了
 <br>
 另外在主页我们可以看到这是build with koken
 <br>
 ![Img](../FILES/photographer/img-20220814165123.png)
+<br>
 通过searchsploit我们可以看到这里有一个文件上传(需要身份验证)后的漏洞
+<br>
 ![Img](../FILES/photographer/img-20220814165254.png)
+<br>
 在右下角我们可以发现有一个import content, 接下来我们就来用Burp抓包然后进行文件上传
+<br>
 ![Img](../FILES/photographer/img-20220814170640.png)
+
 ## 突破边界
 上传完之后, 就拿到了shell
 ![Img](../FILES/photographer/img-20220814170846.png)
