@@ -154,6 +154,7 @@ nikto出来的结果并没有多少
 当我尝试连接的时候, 发现它跟我说\的数量不够, 于是再加两个
 <br>
 ![Img](../FILES/photographer/img-20220814164834.png)
+<br>
 发现已经通过其连接上
 <br>
 ![Img](../FILES/photographer/img-20220814164900.png)
@@ -161,9 +162,11 @@ nikto出来的结果并没有多少
 下载mailsent.txt到本地
 <br>
 ![Img](../FILES/photographer/img-20220814164928.png)
+<br>
 发现这是一个关于Daisa的邮件, 然后在login界面我们需要通过邮箱登录, 那就使用这个账号试试
 <br>
 ![Img](../FILES/photographer/img-20220814165024.png)
+<br>
 登录上来了
 <br>
 另外在主页我们可以看到这是build with koken
@@ -211,9 +214,14 @@ find / -perm -u=s -type f 2>/dev/null
 /bin/su
 ```
 既然这样我们就可以通过php7.2来进行提权
+<br>
 ![Img](../FILES/photographer/img-20220814171532.png)
+<br>
 直接利用之后得到结果
+<br>
 ![Img](../FILES/photographer/img-20220814172034.png)
+<br>
 这时候有root权限了
+<br>
 ![Img](../FILES/photographer/img-20220814172119.png)
 提权成功
