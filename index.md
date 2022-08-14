@@ -107,3 +107,13 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 - Seppuku
   - [中文](https://aaroncaiii.github.io/Target%20Notes/Seppuku)
   - [Download Sepuku](https://download.vulnhub.com/seppuku/Seppuku.zip)
+
+### 11.Augest-16.Augest
+- Inclusiveness
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/inclusiveness)
+- Geisha
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/Geisha)
+- Photographer
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/photographer)
+- wpwnvm
+  - [中文](https://aaroncaiii.github.io/Target%20Notes/wpwnvm)
