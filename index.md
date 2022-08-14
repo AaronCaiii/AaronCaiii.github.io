@@ -111,9 +111,13 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 ### 11.Augest-16.Augest
 - Inclusiveness
   - [中文](https://aaroncaiii.github.io/Target%20Notes/inclusiveness)
+  - [Download](https://download.vulnhub.com/inclusiveness/Inclusiveness.ova)
 - Geisha
   - [中文](https://aaroncaiii.github.io/Target%20Notes/Geisha)
+  - [Download](https://download.vulnhub.com/geisha/Geisha.zip)
 - Photographer
   - [中文](https://aaroncaiii.github.io/Target%20Notes/photographer)
+  - [Download](https://download.vulnhub.com/photographer/Photographer.ova)
 - wpwnvm
   - [中文](https://aaroncaiii.github.io/Target%20Notes/wpwnvm)
+  - [Download](https://download.vulnhub.com/wpwn/wpwnvm.zip)
