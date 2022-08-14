@@ -49,7 +49,7 @@ Actally, I'm prepare my OSCP Exam right now, I will share my Notes at this blog 
 ![VM](https://img.shields.io/badge/Kali-2022.02-informational)
 
 ## <span id="Notes">Currently Notes</span>
-![Total](https://img.shields.io/badge/TargetNotes-15-blueviolet)
+![Total](https://img.shields.io/badge/TargetNotes-19-blueviolet)
 ### 21.July-26.July
 - Cute
   - [中文](https://aaroncaiii.github.io/Target%20Notes/Cute)
