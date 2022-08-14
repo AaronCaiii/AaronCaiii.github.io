@@ -60,6 +60,8 @@ Nmap done: 1 IP address (1 host up) scanned in 8.49 seconds
                                           
 ```
 ![Img](../FILES/wpwnvm/img-20220814173742.png)
+
+<br>
 robots.txt是一个fake的信息...
 <br>
 但是这是一个wordpress, 那直接上wpscan
@@ -187,10 +189,18 @@ define( 'DB_COLLATE', '' );
 ```
 然后我们来利用python获取可交互式的shell, 尝试使用这个密码登录另一个用户
 ![Img](../FILES/wpwnvm/img-20220814182655.png)
+
+<br>
 登录上来了!
+
+<br>
 查看sudo -l, 发现这个用户可以执行所有的sudo权限.
+<br>
+
 ![Img](../FILES/wpwnvm/img-20220814182845.png)
 
 那就直接sudo su
 ![Img](../FILES/wpwnvm/img-20220814182827.png)
+
+<br>
 提权成功
