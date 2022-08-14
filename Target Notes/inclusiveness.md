@@ -163,7 +163,12 @@ www-data@inclusiveness:/tmp$ export PATH=/tmp:$PATH
 export PATH=/tmp:$PATH
 www-data@inclusiveness:/tmp$ 
 ```
+
+<br>
 然后去执行/rootshell
+<br>
 ![Img](../FILES/inclusiveness/img-20220814200330.png)
+<br>
 提权成功
+<br>
 ![Img](../FILES/inclusiveness/img-20220814200354.png)
