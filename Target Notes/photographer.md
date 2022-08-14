@@ -76,7 +76,7 @@ Nmap done: 1 IP address (1 host up) scanned in 25.90 seconds
 总计开放了4个端口, 进行网页信息枚举
 ### 网页信息枚举
 直接访问80端口就是一个blog的主页面
-![Img](./FILES/photographerimg-20220814162851.png)
+![Img](../FILES/photographer/img-20220814162851.png)
 使用dirsearch枚举一下路径
 ```
 └─$ cat dirsearch_res.txt| grep -v "403"        
@@ -90,8 +90,8 @@ Nmap done: 1 IP address (1 host up) scanned in 25.90 seconds
 ```
 访问上面三个目录, 都是一些最基本的web资源
 <br>
-![Img](./FILES/photographerimg-20220814163238.png)
-![Img](./FILES/photographerimg-20220814163242.png)
+![Img](../FILES/photographer/img-20220814163238.png)
+![Img](../FILES/photographer/img-20220814163242.png)
 <br>
 nikto出来的结果并没有多少
 ```
@@ -143,33 +143,33 @@ nikto出来的结果并没有多少
 ```
 
 发现了管理员后台
-![Img](./FILES/photographerimg-20220814164633.png)
+![Img](../FILES/photographer/img-20220814164633.png)
 ### smb枚举
-![Img](./FILES/photographerimg-20220814164733.png)
+![Img](../FILES/photographer/img-20220814164733.png)
 通过smbclient可以发现smbashare是一个share的文件夹
-![Img](./FILES/photographerimg-20220814164817.png)
+![Img](../FILES/photographer/img-20220814164817.png)
 当我尝试连接的时候, 发现它跟我说\的数量不够, 于是再加两个
-![Img](./FILES/photographerimg-20220814164834.png)
+![Img](../FILES/photographer/img-20220814164834.png)
 发现已经通过其连接上
-![Img](./FILES/photographerimg-20220814164900.png)
+![Img](../FILES/photographer/img-20220814164900.png)
 下载mailsent.txt到本地
-![Img](./FILES/photographerimg-20220814164928.png)
+![Img](../FILES/photographer/img-20220814164928.png)
 发现这是一个关于Daisa的邮件, 然后在login界面我们需要通过邮箱登录, 那就使用这个账号试试
-![Img](./FILES/photographerimg-20220814165024.png)
+![Img](../FILES/photographer/img-20220814165024.png)
 登录上来了
 <br>
 另外在主页我们可以看到这是build with koken
 <br>
-![Img](./FILES/photographerimg-20220814165123.png)
+![Img](../FILES/photographer/img-20220814165123.png)
 通过searchsploit我们可以看到这里有一个文件上传(需要身份验证)后的漏洞
-![Img](./FILES/photographerimg-20220814165254.png)
+![Img](../FILES/photographer/img-20220814165254.png)
 在右下角我们可以发现有一个import content, 接下来我们就来用Burp抓包然后进行文件上传
-![Img](./FILES/photographerimg-20220814170640.png)
+![Img](../FILES/photographer/img-20220814170640.png)
 ## 突破边界
 上传完之后, 就拿到了shell
-![Img](./FILES/photographerimg-20220814170846.png)
+![Img](../FILES/photographer/img-20220814170846.png)
 然后发现上面有python, 于是使用python获取可交互式的shell
-![Img](./FILES/photographerimg-20220814170934.png)
+![Img](../FILES/photographer/img-20220814170934.png)
 ### 提权
 查看带有suid的文件
 ```
@@ -198,9 +198,9 @@ find / -perm -u=s -type f 2>/dev/null
 /bin/su
 ```
 既然这样我们就可以通过php7.2来进行提权
-![Img](./FILES/photographerimg-20220814171532.png)
+![Img](../FILES/photographer/img-20220814171532.png)
 直接利用之后得到结果
-![Img](./FILES/photographerimg-20220814172034.png)
+![Img](../FILES/photographer/img-20220814172034.png)
 这时候有root权限了
-![Img](./FILES/photographerimg-20220814172119.png)
+![Img](../FILES/photographer/img-20220814172119.png)
 提权成功
